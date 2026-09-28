@@ -6,12 +6,17 @@ backend:
 media_folder: "public/images"
 public_folder: "/images"
 
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
 collections:
   - name: "posts"
     label: "AI 研究文章"
     folder: "src/pages/posts"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-post"
     fields:
       - { label: "排版模板", name: "layout", widget: "hidden", default: "../../layouts/PostLayout.astro" }
       - { label: "文章標題", name: "title", widget: "string" }
