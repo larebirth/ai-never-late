@@ -2,6 +2,7 @@ backend:
   name: github
   repo: larebirth/ai-never-late
   branch: main
+  auth_methods: [token]
 
 media_folder: "public/images"
 public_folder: "/images"
