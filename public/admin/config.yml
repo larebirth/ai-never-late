@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: larebirth/ai-never-late
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "posts"
+    label: "AI 研究文章"
+    folder: "src/pages/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "排版模板", name: "layout", widget: "hidden", default: "../../layouts/PostLayout.astro" }
+      - { label: "文章標題", name: "title", widget: "string" }
+      - { label: "發布日期", name: "pubDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "文章簡介 (SEO)", name: "description", widget: "string" }
+      - { label: "標籤 (Tags)", name: "tags", widget: "list" }
+      - { label: "正文內容 (Markdown)", name: "body", widget: "markdown" }
